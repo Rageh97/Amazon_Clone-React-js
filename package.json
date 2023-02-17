@@ -2,8 +2,8 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://Rageh97.github.io/Amazon-Clone-React-js",
   "dependencies": {
-    "homepage":"http://Rageh97.github.io/Amazon-Clone-React-js",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@reduxjs/toolkit": "^1.9.2",
     "@testing-library/jest-dom": "^5.16.5",
@@ -29,9 +29,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
+    "build": "npx react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
