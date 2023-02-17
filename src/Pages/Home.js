@@ -15,6 +15,7 @@ import {
 } from "../RTK/Slices.js/productsSlice";
 import ProductList from "../Components/ProductList";
 import ScrollToTop from "../Components/Scroll";
+
 const Home = () => {
   const dispatch = useDispatch();
   const products = useSelector(getAllProducts);
@@ -50,6 +51,7 @@ const Home = () => {
 
   return (
     <>
+   
       <ScrollToTop />
       <ToastContainer />
       <section>

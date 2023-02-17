@@ -4,9 +4,11 @@ import BreadCrum from "../Components/BreadCrum";
 import { Link } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
 import watch from "../images/watch.jpg";
+import ScrollToTop from "../Components/Scroll";
 const Checkout = () => {
   return (
     <>
+    <ScrollToTop />
       <div className="checkout-warapper py-5 home-2">
         <div className="container-xxl">
           <div className="row">

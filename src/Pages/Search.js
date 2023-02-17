@@ -24,6 +24,7 @@ const Search = () => {
     return <h3>No Products found.</h3>;
   }
   return (
+    
     <main>
       <div>
         <div className='container'>

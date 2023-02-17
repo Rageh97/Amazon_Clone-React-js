@@ -5,9 +5,11 @@ import {AiOutlineHome} from "react-icons/ai"
 import {BiPhoneCall} from "react-icons/bi"
 import {AiOutlineMail} from "react-icons/ai"
 import {BsInfoCircle} from "react-icons/bs"
+import ScrollToTop from "../Components/Scroll";
 const Contact = () => {
   return (
     <>
+    <ScrollToTop />
       <Meta title={"Contact us"} />
       <BreadCrum title="Contact" />
       <div className="contact-wrapper py-5 home-2">

@@ -5,9 +5,11 @@ import BlogCard from "../Components/BlogCard";
 import { Link } from "react-router-dom";
 import blog from "../images/blog-1.jpg"
 import { HiArrowNarrowLeft } from "react-icons/hi";
+import ScrollToTop from "../Components/Scroll";
 const SingleBlog = () => {
   return (
     <>
+    <ScrollToTop />
       <Meta title={"Dynamic Blog Name"} />
       <BreadCrum title="Dynamic Blog Name" />
       <div className="blog-wrapper home-2 py-5">

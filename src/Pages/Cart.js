@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+import ScrollToTop from "../Components/Scroll";
 // import {emptyCart} from "../images/EmptyCart"
 import {
   removeFromCart,
@@ -30,6 +31,7 @@ const Cart = () => {
 
   return (
     <>
+    <ScrollToTop />
       <Meta title={"Cart"} />
       <BreadCrum title="Cart" />
       <ToastContainer />

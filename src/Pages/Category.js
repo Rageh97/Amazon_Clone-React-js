@@ -8,6 +8,7 @@ import { STATUS } from '../Utilts.js/Status';
 import Loader from '../Utilts.js/Loader';
 import ProductList from '../Components/ProductList';
 import { ToastContainer } from 'react-toastify';
+import ScrollToTop from "../Components/Scroll";
 const Category = () => {
   const dispatch = useDispatch()
   const {category} = useParams()
@@ -18,6 +19,7 @@ const Category = () => {
   },[dispatch,category])
   return (
     <>
+    <ScrollToTop />
     <ToastContainer/>
     <section className='py-5 home-2'>
       <div className="container">
