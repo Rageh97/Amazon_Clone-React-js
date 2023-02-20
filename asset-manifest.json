@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/Amazon_Clone-React-js/static/css/main.073c79d5.css",
+    "main.js": "/Amazon_Clone-React-js/static/js/main.b2c9ef08.js",
+    "static/media/blog-1.jpg": "/Amazon_Clone-React-js/static/media/blog-1.ba155d989afb69b6f6b8.jpg",
+    "index.html": "/Amazon_Clone-React-js/index.html",
+    "static/media/view.svg": "/Amazon_Clone-React-js/static/media/view.656dca615fdc5fb084c5199c18eeb24a.svg",
+    "static/media/wish.svg": "/Amazon_Clone-React-js/static/media/wish.417da1a5c71c1c516af8c35a335efa66.svg",
+    "static/media/prodcompare.svg": "/Amazon_Clone-React-js/static/media/prodcompare.2bbfd340c94177fd1223af04956c03dc.svg",
+    "static/media/add-cart.svg": "/Amazon_Clone-React-js/static/media/add-cart.07089cca7ace32a4716dc122b1b11a68.svg",
+    "main.073c79d5.css.map": "/Amazon_Clone-React-js/static/css/main.073c79d5.css.map",
+    "main.b2c9ef08.js.map": "/Amazon_Clone-React-js/static/js/main.b2c9ef08.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c79d5.css",
+    "static/js/main.b2c9ef08.js"
+  ]
+}
