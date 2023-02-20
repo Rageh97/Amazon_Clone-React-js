@@ -16,6 +16,7 @@ import {
 import ProductList from "../Components/ProductList";
 import ScrollToTop from "../Components/Scroll";
 
+
 const Home = () => {
   const dispatch = useDispatch();
   const products = useSelector(getAllProducts);
@@ -54,7 +55,8 @@ const Home = () => {
    
       <ScrollToTop />
       <ToastContainer />
-      <section>
+      
+      <section className="home-2">
         <div className="py-5">
           <div className="container-fluid">
             <div className="row">
@@ -179,6 +181,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+    
 
       {/*      
       <section className="home-1 py-5">

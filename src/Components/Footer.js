@@ -57,17 +57,17 @@ const Footer = () => {
                   abdelhady412rageh@gmail.com
                 </a>
                 <div className="social-icons d-flex  align-items-center gap-15 mb-4">
-                  <a href="">
-                    <BsLinkedin className="text-white fs-5"/>
+                  <a href="https://www.linkedin.com/in/mohamed-rageh-5b2144221/">
+                    <BsLinkedin className="text-white fs-5 icon"/>
+                  </a>
+                  <a href="https://m.facebook.com/mohamed.rageh.71465?eav=AfaeTz9ga2TvJC7R1ox5AijI0yg4QZ8Hb0e63aq7E2qNd9TuWRbDfy2LoWlgVd5m6gc&paipv=0">
+                    <BsFacebook className="text-white fs-5 icon"/>
                   </a>
                   <a href="">
-                    <BsFacebook className="text-white fs-5"/>
+                    <BsGithub className="text-white fs-5 icon"/>
                   </a>
                   <a href="">
-                    <BsGithub className="text-white fs-5"/>
-                  </a>
-                  <a href="">
-                    <BsInstagram className="text-white fs-5"/>
+                    <BsInstagram className="text-white fs-5 icon"/>
                   </a>
                 </div>
               </div>

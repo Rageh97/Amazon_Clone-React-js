@@ -12,7 +12,7 @@ const Checkout = () => {
       <div className="checkout-warapper py-5 home-2">
         <div className="container-xxl">
           <div className="row">
-            <div className="col-7">
+            <div className="col-xxl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
               <div className="checkout-left-data">
                 <h3 className="website-name">ShopHouse</h3>
                 <nav
@@ -113,7 +113,7 @@ const Checkout = () => {
                 </form>
               </div>
             </div>
-            <div className="col-5">
+            <div className="col-xxl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12">
               <div className="border-bottom py-4">
                 <div className="d-flex mb-2 align-items-center gap-10">
                   <div className="w-75 d-flex gap-10">

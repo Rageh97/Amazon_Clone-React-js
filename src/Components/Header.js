@@ -8,10 +8,12 @@ import {
   fetchCategories,
   getAllCategory,
 } from "./../RTK/Slices.js/categorySlice";
-import { AiOutlineMenu } from "react-icons/ai";
-// import "../MediaQuery.css"
+import "../MediaQuery.css";
 import { useEffect } from "react";
 import { useState } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import {AiOutlineMenuFold} from "react-icons/ai"
 const Header = () => {
   const dispatch = useDispatch();
   const activeLink = "text-warning";
@@ -23,7 +25,9 @@ const Header = () => {
   const userName = JSON.parse(localStorage.getItem("user"));
   const isLOggedIn = localStorage.getItem("isloggedin");
   const [searchTerm, setSearchTerm] = useState("");
-
+  useEffect(() => {
+    Aos.init({ duration: 2500 });
+  }, []);
   const handleSearchTerm = (e) => {
     e.preventDefault();
     setSearchTerm(e.target.value);
@@ -36,10 +40,315 @@ const Header = () => {
   useEffect(() => {
     dispatch(fetchCategories());
   }, [dispatch]);
+// .......................................
+const [showNavbar, setShowNavbar] = useState(false)
 
+const handleShowNavbar = () => {
+  setShowNavbar(!showNavbar)
+}
+// ........................................
   return (
     <>
       <header className="header-top py-3">
+        <div className="container-xxl">
+          <div className="row">
+            <div className="col-xxl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12">
+              <p className="text-white mb-0">
+                Free shopping over $100 | Free returns
+              </p>
+            </div>
+            <div className="col-xxl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12">
+              {isLOggedIn ? (
+                <div style={{ color: "#febd69" }}>
+                  <span className="text-white">Hello |</span> {userName.name}
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
+            <div className="col-xxl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12">
+              <p className="text-end text-white mb-0">
+                {" "}
+                Hotline :{" "}
+                <a className="text-white" href="tel 001637393737">
+                  01065330985
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </header>
+      <header className="header-mid">
+        <div className="container-xxl">
+          <div className="row align-items-center">
+            <div className="header-mid-logo col-xxl-2 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <h1>
+                <h1 data-aos="zoom-in" className="text-white">SHOPPING</h1>
+              </h1>
+            </div>
+            <div className="header-mid-search col-xxl-5 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+              <div className="input-group py-3">
+                <input
+                  onChange={(e) => handleSearchTerm(e)}
+                  type="text"
+                  className="form-control py-3"
+                  placeholder="search product here"
+                  aria-label="search product here"
+                  aria-describedby="basic-addon2"
+                />
+                <Link to={`search/${searchTerm}`}>
+                  <span className="input-group-text p-3" id="basic-addon2">
+                    <BsSearch className="fs-4" />
+                  </span>
+                </Link>
+              </div>
+            </div>
+            {/*  */}
+           
+             
+            <nav className="navbar col-6">
+      <div className="container">
+        
+        <div className="menu-icon" onClick={handleShowNavbar}>
+          <AiOutlineMenuFold className="text-white fs-5"/>
+        </div>
+        <div className={`nav-elements  ${showNavbar && 'active'}`}>
+          <ul>
+            <li>
+            <div className="comapre-product">
+                  <Link
+                    to="/compare-product"
+                    className="d-flex align-items-center gap-10 text-white"
+                  >
+                    <img data-aos="zoom-in" src="images/compare.svg" />
+                    <p className="mb-0">
+                      Compare <br /> products
+                    </p>
+                  </Link>
+                </div>
+            </li>
+            <li>
+            <div className="favorite-wishlist">
+                  <Link
+                    to="/favorite-wishlist"
+                    className="d-flex align-items-center gap-10 text-white"
+                  >
+                    <img data-aos="zoom-in" src="images/wishlist.svg" />
+                    <p className="mb-0">
+                      Favorit
+                      <br /> wishlist
+                    </p>
+                  </Link>
+                </div>
+            </li>
+            <li>
+            {isLOggedIn ? (
+                  <>
+                    <Link to="/log-in" onClick={handleLogOut}>
+                      <div className="d-flex align-items-center justify-content-center gap-10">
+                        <BiLogOutCircle className="text-white fs-5" />
+                        <h6 className="text-white">logout</h6>
+                      </div>
+                    </Link>
+                  </>
+                ) : (
+                  <div className="log-in-content">
+                    <Link
+                      to="/log-in"
+                      className="d-flex align-items-center gap-10 text-white"
+                    >
+                      <img data-aos="zoom-in" src="images/user.svg" />
+                      <p className="mb-0">
+                        Log in <br /> My account
+                      </p>
+                    </Link>
+                  </div>
+                )}
+            </li>
+            <li>
+            <div className="cart-content">
+                  <Link
+                    to="/cart"
+                    className="d-flex align-items-center gap-10 text-white"
+                  >
+                    <img src="images/cart.svg" />
+                    <div className="d-flex flex-column">
+                      <span className="badge bg-white text-dark">
+                        {cart.quantity}
+                      </span>
+                      <p className="mb-0">${cart.totalPrice}</p>
+                    </div>
+                  </Link>
+                </div>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+            </nav>
+            
+           {/*  */}
+            <div className="header-links align-items-center justify-content-center col-xxl-5 col-lg-6 col-md-12 col-sm-12 col-xs-12 ">
+              <div className="gap-30 d-flex align-items-center justify-content-between">
+                <div className="comapre-product">
+                  <Link
+                    to="/compare-product"
+                    className="d-flex align-items-center gap-10 text-white"
+                  >
+                    <img data-aos="zoom-in" src="images/compare.svg" />
+                    <p className="mb-0">
+                      Compare <br /> products
+                    </p>
+                  </Link>
+                </div>
+                <div className="favorite-wishlist">
+                  <Link
+                    to="/favorite-wishlist"
+                    className="d-flex align-items-center gap-10 text-white"
+                  >
+                    <img data-aos="zoom-in" src="images/wishlist.svg" />
+                    <p className="mb-0">
+                      Favorit
+                      <br /> wishlist
+                    </p>
+                  </Link>
+                </div>
+                {isLOggedIn ? (
+                  <>
+                    <Link to="/log-in" onClick={handleLogOut}>
+                      <div className="d-flex align-items-center justify-content-center gap-10">
+                        <BiLogOutCircle className="text-white fs-5" />
+                        <h6 className="text-white">logout</h6>
+                      </div>
+                    </Link>
+                  </>
+                ) : (
+                  <div className="log-in-content">
+                    <Link
+                      to="/log-in"
+                      className="d-flex align-items-center gap-10 text-white"
+                    >
+                      <img data-aos="zoom-in" src="images/user.svg" />
+                      <p className="mb-0">
+                        Log in <br /> My account
+                      </p>
+                    </Link>
+                  </div>
+                )}
+                <div className="cart-content">
+                  <Link
+                    to="/cart"
+                    className="d-flex align-items-center gap-10 text-white"
+                  >
+                    <img src="images/cart.svg" />
+                    <div className="d-flex flex-column">
+                      <span className="badge bg-white text-dark">
+                        {cart.quantity}
+                      </span>
+                      <p className="mb-0">${cart.totalPrice}</p>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <header className="header-bottom py-3">
+        <div className="container-xxl">
+          <div className="row">
+            <div className="menueShow col-xxl-5  d-flex align-items-center justify-content-center">
+              <div className="menu-category d-flex align-items-center gap-15 mx-5">
+                <div className="dropdown">
+                  <button
+                    className="btn btn-secondary dropdown-toggle  bg-transparent border-0"
+                    type="button"
+                    id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Category
+                  </button>
+                  <ul
+                    className="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton1"
+                  >
+                    {categories.slice(0, 8).map((category, idx) => {
+                      return (
+                        <>
+                          <li key={idx}>
+                            <Link
+                              to={`/category/${category}`}
+                              className="dropdown-item"
+                            >
+                              {category}
+                            </Link>
+                          </li>
+                        </>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </div>
+              
+                <div className="d-flex menueLinks align-items-center gap-15 justify-content-center">
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      isActive ? activeLink : unActiveLink
+                    }
+                  >
+                    Home
+                  </NavLink>
+
+                  <NavLink
+                    to="/blogs"
+                    className={({ isActive }) =>
+                      isActive ? activeLink : unActiveLink
+                    }
+                  >
+                    Blogs
+                  </NavLink>
+                  <NavLink
+                    to="/contact"
+                    className={({ isActive }) =>
+                      isActive ? activeLink : unActiveLink
+                    }
+                  >
+                    Contact
+                  </NavLink>
+                </div>
+              
+            </div>
+            <div className="categoryShow  col-xxl-7 align-items-center justify-content-center">
+              <ul className="gap-15 d-flex align-items-center mb-0">
+                {categories.slice(0, 6).map((category, idx) => {
+                  return (
+                    <>
+                      <li key={idx}>
+                        <NavLink
+                          className={({ isActive }) =>
+                            isActive ? activeLink : unActiveLink
+                          }
+                          to={`/category/${category}`}
+                        >
+                          {category.replace("-", "")}
+                        </NavLink>
+                      </li>
+                    </>
+                  );
+                })}
+                <li>
+                  <NavLink className="text-white" to="/">
+                    All Products
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      {/* <header className="header-top py-3">
         <div className="container-xxl">
           <div className="row d-flex justify-content-between flex-wrap">
             <div className="col-5">
@@ -93,9 +402,8 @@ const Header = () => {
                 </Link>
               </div>
             </div>
-           
+
             <div className="col-xxl-5 col-md-2 col-sm-2 col-xs-2 gap-15 d-flex justify-content-end">
-             
               <nav className="navbar navbar-expand-xl">
                 <button
                   className="navbar-toggler border-warning"
@@ -117,136 +425,134 @@ const Header = () => {
                 >
                   <ul className="navbar-nav me-auto mb-2 mb-lg-0 gap-15">
                     <li className="nav-item">
-                    <div>
-                  <Link
-                    to="/compare-product"
-                    className="d-flex align-items-center gap-10 text-white"
-                  >
-                    <img src="images/compare.svg" />
-                    <p className="mb-0">
-                      Compare <br /> products
-                    </p>
-                  </Link>
-                </div>
-                    </li>
-                    <li className="nav-item">
-                    <div>
-                  <Link
-                    to="/favorite-wishlist"
-                    className="d-flex align-items-center gap-10 text-white"
-                  >
-                    <img src="images/wishlist.svg" />
-                    <p className="mb-0">
-                      Favorit
-                      <br /> wishlist
-                    </p>
-                  </Link>
-                </div>
-                    </li>
-                    <li className="nav-item">
-                    {isLOggedIn ? (
-                  <>
-                    <Link to="/log-in" onClick={handleLogOut}>
-                      <div className="d-flex align-items-center justify-content-center gap-10">
-                        <BiLogOutCircle className="text-white fs-5" />
-                        <h6 className="text-white">logout</h6>
+                      <div>
+                        <Link
+                          to="/compare-product"
+                          className="d-flex align-items-center gap-10 text-white"
+                        >
+                          <img src="images/compare.svg" />
+                          <p className="mb-0">
+                            Compare <br /> products
+                          </p>
+                        </Link>
                       </div>
-                    </Link>
-                  </>
-                ) : (
-                  <div>
-                    <Link
-                      to="/log-in"
-                      className="d-flex align-items-center gap-10 text-white"
-                    >
-                      <img src="images/user.svg" />
-                      <p className="mb-0">
-                        Log in <br /> My account
-                      </p>
-                    </Link>
-                  </div>
-                )}
                     </li>
                     <li className="nav-item">
-                    <div>
-                  <Link
-                    to="/cart"
-                    className="d-flex align-items-center gap-10 text-white"
-                  >
-                    <img src="images/cart.svg" />
-                    <div className="d-flex flex-column">
-                      <span className="badge bg-white text-dark">
-                        {cart.quantity}
-                      </span>
-                      <p className="mb-0">${cart.totalPrice}</p>
-                    </div>
-                  </Link>
-                </div>
+                      <div>
+                        <Link
+                          to="/favorite-wishlist"
+                          className="d-flex align-items-center gap-10 text-white"
+                        >
+                          <img src="images/wishlist.svg" />
+                          <p className="mb-0">
+                            Favorit
+                            <br /> wishlist
+                          </p>
+                        </Link>
+                      </div>
                     </li>
-                    
+                    <li className="nav-item">
+                      {isLOggedIn ? (
+                        <>
+                          <Link to="/log-in" onClick={handleLogOut}>
+                            <div className="d-flex align-items-center justify-content-center gap-10">
+                              <BiLogOutCircle className="text-white fs-5" />
+                              <h6 className="text-white">logout</h6>
+                            </div>
+                          </Link>
+                        </>
+                      ) : (
+                        <div>
+                          <Link
+                            to="/log-in"
+                            className="d-flex align-items-center gap-10 text-white"
+                          >
+                            <img src="images/user.svg" />
+                            <p className="mb-0">
+                              Log in <br /> My account
+                            </p>
+                          </Link>
+                        </div>
+                      )}
+                    </li>
+                    <li className="nav-item">
+                      <div>
+                        <Link
+                          to="/cart"
+                          className="d-flex align-items-center gap-10 text-white"
+                        >
+                          <img src="images/cart.svg" />
+                          <div className="d-flex flex-column">
+                            <span className="badge bg-white text-dark">
+                              {cart.quantity}
+                            </span>
+                            <p className="mb-0">${cart.totalPrice}</p>
+                          </div>
+                        </Link>
+                      </div>
+                    </li>
                   </ul>
                 </div>
               </nav>
-                {/* <div>
-                  <Link
-                    to="/compare-product"
-                    className="d-flex align-items-center gap-10 text-white"
-                  >
-                    <img src="images/compare.svg" />
-                    <p className="mb-0">
-                      Compare <br /> products
-                    </p>
-                  </Link>
-                </div>
-                <div>
-                  <Link
-                    to="/favorite-wishlist"
-                    className="d-flex align-items-center gap-10 text-white"
-                  >
-                    <img src="images/wishlist.svg" />
-                    <p className="mb-0">
-                      Favorit
-                      <br /> wishlist
-                    </p>
-                  </Link>
-                </div>
-                {isLOggedIn ? (
-                  <>
-                    <Link to="/log-in" onClick={handleLogOut}>
-                      <div className="d-flex align-items-center justify-content-center gap-10">
-                        <BiLogOutCircle className="text-white fs-5" />
-                        <h6 className="text-white">logout</h6>
-                      </div>
-                    </Link>
-                  </>
-                ) : (
-                  <div>
-                    <Link
-                      to="/log-in"
-                      className="d-flex align-items-center gap-10 text-white"
-                    >
-                      <img src="images/user.svg" />
-                      <p className="mb-0">
-                        Log in <br /> My account
-                      </p>
-                    </Link>
-                  </div>
-                )}
-                <div>
-                  <Link
-                    to="/cart"
-                    className="d-flex align-items-center gap-10 text-white"
-                  >
-                    <img src="images/cart.svg" />
-                    <div className="d-flex flex-column">
-                      <span className="badge bg-white text-dark">
-                        {cart.quantity}
-                      </span>
-                      <p className="mb-0">${cart.totalPrice}</p>
+              <div>
+                <Link
+                  to="/compare-product"
+                  className="d-flex align-items-center gap-10 text-white"
+                >
+                  <img src="images/compare.svg" />
+                  <p className="mb-0">
+                    Compare <br /> products
+                  </p>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  to="/favorite-wishlist"
+                  className="d-flex align-items-center gap-10 text-white"
+                >
+                  <img src="images/wishlist.svg" />
+                  <p className="mb-0">
+                    Favorit
+                    <br /> wishlist
+                  </p>
+                </Link>
+              </div>
+              {isLOggedIn ? (
+                <>
+                  <Link to="/log-in" onClick={handleLogOut}>
+                    <div className="d-flex align-items-center justify-content-center gap-10">
+                      <BiLogOutCircle className="text-white fs-5" />
+                      <h6 className="text-white">logout</h6>
                     </div>
                   </Link>
-                </div> */}
-              
+                </>
+              ) : (
+                <div>
+                  <Link
+                    to="/log-in"
+                    className="d-flex align-items-center gap-10 text-white"
+                  >
+                    <img src="images/user.svg" />
+                    <p className="mb-0">
+                      Log in <br /> My account
+                    </p>
+                  </Link>
+                </div>
+              )}
+              <div>
+                <Link
+                  to="/cart"
+                  className="d-flex align-items-center gap-10 text-white"
+                >
+                  <img src="images/cart.svg" />
+                  <div className="d-flex flex-column">
+                    <span className="badge bg-white text-dark">
+                      {cart.quantity}
+                    </span>
+                    <p className="mb-0">${cart.totalPrice}</p>
+                  </div>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -285,16 +591,7 @@ const Header = () => {
                         Home
                       </NavLink>
                     </li>
-                    {/* <li className="nav-item">
-                      <NavLink
-                        to="/product"
-                        className={({ isActive }) =>
-                          isActive ? activeLink : unActiveLink
-                        }
-                      >
-                        Our store
-                      </NavLink>
-                    </li> */}
+                    
                     <li className="nav-item">
                       <NavLink
                         to="/blogs"
@@ -373,7 +670,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </header>
+      </header> */}
     </>
   );
 };

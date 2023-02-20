@@ -24,7 +24,18 @@ const Category = () => {
     <section className='py-5 home-2'>
       <div className="container">
         <div className="row">
-        <h3>See our <span className='text-capitalize'>{category}</span></h3>
+        <div className="title-md-category">
+                  <h3
+                    style={{
+                      borderLeft: "5px solid black",
+                      backgroundColor: "#febd69",
+                      boxShadow: "0 0 5px #696969",
+                    }}
+                    className="text-dark mb-3 mx-3 w-100 text-center p-3"
+                  >
+                    {category}
+                  </h3>
+                </div>
           {categoryProductsStatus===STATUS.Loading ? <Loader/> : <ProductList products = {categoryProducts}/>}
         </div>
       </div>

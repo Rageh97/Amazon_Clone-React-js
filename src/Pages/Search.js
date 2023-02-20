@@ -21,7 +21,13 @@ const Search = () => {
     dispatch(fetchSearchItem(searchTerm));
   }, [searchTerm]);
   if (searchProducts.length === 0) {
-    return <h3>No Products found.</h3>;
+    return (<>
+    
+      <div>
+        <h2 className="bg-danger text-white p-3 text-center mt-5 mb-5">Not Found !</h2>
+      </div>
+    
+    </>);
   }
   return (
     

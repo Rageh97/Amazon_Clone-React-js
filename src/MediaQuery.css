@@ -1,24 +1,139 @@
 /* X-Small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) { 
+@media (max-width: 575.98px) {
+  .cart-header h4{
+    width: 100%;
+  }
+  .cart-header{
+    width: 100%;
+  }
+  .cart-data{
+    width: 100%;
+  }
+   .cart-col-1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+  }
+   .cart-col-2{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+  }
+   .cart-col-3{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+  }
+   .cart-col-4{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+   .cart-header .cart-col-1{
+    width: 100%;
+    font-size: 20px;
+    
+  }
+   .cart-header .cart-col-2{
+    width: 100%;
+    font-size: 20px;
+    
+  }
+   .cart-header .cart-col-3{
+     width: 100%;
+     font-size: 20px;
+    
+  }
+   .cart-header .cart-col-4{
+    width: 100%;
+    font-size: 20px;
+    
+  }
+  .clear-cart{
+    width: 100%;
+    margin-left: 35px;
+  }
+  /* .button-shipping {
+    width: 100%;
+  } */
+  .filter-title {
+    font-size: 15px;
+  }
+  .categoryShow {
+    display: none;
+  }
+  .navbar{
+    display: block;
+  }
+  .header-links{
+    display: none;
+  }
 
- }
+  .menueLinks{
+    margin-right: 25px;
+  }
+  .login-card{
+    width: 100%;
+  }
+  .title-md-category h3{
+    width: 100%;
+  }
+/* .single-button-singleproduct button{
+  width: 100%;
 
- /* Small devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) { 
+} */
+.blogs-item ul li{
+  
+  font-size: 10px;
+}
+}
+@media (max-width: 575.98px){
+  .card-1{
+    width: 100%;
+  }
+  .navbar{
+    display: block;
+  }
+  .header-links{
+    display: none;
+  }
+  
+}
 
- }
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .categoryShow {
+    display: none;
+  }
+  
+}
 
- /* Medium devices (tablets, less than 992px) */
-@media (max-width: 991.98px) { 
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .categoryShow {
+    display: none;
+  }
+ 
+}
 
- }
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  .categoryShow {
+    display: none;
+  }
 
- /* Large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) { 
+}
 
- }
-
- /* X-Large devices (large desktops, less than 1400px) */
-@media (max-width: 1399.98px) { 
-
- }
+/* X-Large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+  .categoryShow {
+    background-color: #131921;
+    padding: 5px;
+  }
+  .menueShow {
+    margin-bottom: 5px;
+  }
+}

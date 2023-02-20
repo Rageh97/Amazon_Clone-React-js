@@ -1,11 +1,11 @@
 import React from "react";
 import Meta from "../Components/Meta";
 import BreadCrum from "../Components/BreadCrum";
-import ProductCard from "../Components/ProductCard";
+
 import Colors from "./../Components/Colors";
 import ReactStars from "react-rating-stars-component";
 import { useState } from "react";
-import ReactImageZoom from "react-image-zoom";
+
 import { TbGitCompare } from "react-icons/tb";
 import { AiOutlineHeart } from "react-icons/ai";
 import { Link } from "react-router-dom";
@@ -13,11 +13,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ScrollToTop from "../Components/Scroll";
+import {addToCart} from "../RTK/Slices.js/CartSlice"
+import {addToFavorite} from "../RTK/Slices.js/favoriteSlice"
+import {addToCompare} from "../RTK/Slices.js/compareProductSlice"
 import {
+
   getSingleProduct,
   getSingleProductStatus,
   fetchSingleProduct,
 } from "../RTK/Slices.js/productsSlice";
+import { ToastContainer } from 'react-toastify';
 const SingleProduct = () => {
   const [orderProduct, setOrderProduct] = useState(true);
   const copyToClipboard = (text) => {
@@ -35,18 +40,14 @@ const SingleProduct = () => {
   useEffect(() => {
     dispatch(fetchSingleProduct(id));
   }, []);
-  // const props = {
-  //   width: 400,
-  //   height: 600,
-  //   zoomWidth: 600,
-  //   img: "https://th.bing.com/th/id/R.bfc317f4056e10645c5d5b5ae0dd6e99?rik=HDyqXyi3XGJdRQ&pid=ImgRaw&r=0",
-  // };
+
 
   return (
     <>
+    <ToastContainer/>
       <ScrollToTop />
       <>
-        <Meta title={"Product Name"} />
+        <Meta title={product?.brand} />
         <BreadCrum title={product?.title} />
         <div className="main-product-wrapper py-5 home-2">
           <div className="container-xxl">
@@ -170,41 +171,29 @@ const SingleProduct = () => {
                     </div>
                     <div className="d-flex align-items-center flex-row mt-2 mb-0 gap-10">
                       <h3 className="product-hedding">Quantity :</h3>
-                      <div className="">
-                        <input
-                          className="form-control"
-                          min={1}
-                          max={10}
-                          style={{ width: "70px" }}
-                          type="number"
-                        />
-                      </div>
-                      <div className="d-flex ms-5 justify-content-center align-items-center gap-15">
-                        <button type="submit" className="button border-0">
+                      
+                      <div className="d-flex row single-button-singleproduct single-button ms-5 justify-content-center align-items-center gap-15">
+                        <button onClick={() => dispatch(addToCart(product))} type="submit" className="button border-0">
                           Add to cart
                         </button>
+                        <Link  to="/cart">
                         <button
-                          to="/sign-up"
-                          className="button text-dark bg-warning border-0  signup"
+                        onClick={() => dispatch(addToCart(product))}
+                         
+                          className="button w-100 text-dark bg-warning border-0  signup"
                         >
                           Buy it now
                         </button>
+                        </Link>
                       </div>
                     </div>
                     <div className="d-flex gap-15 align-items-center mt-3">
-                      <div>
+                      <div onClick={() => dispatch(addToFavorite(product))}>
                         {" "}
-                        <a href="">
-                          {" "}
-                          <TbGitCompare className="fs-5 me-2" />
-                          Add to compare
-                        </a>
-                      </div>
-                      <div>
-                        <a href="">
+                        <Link to="/compare-product">
                           <AiOutlineHeart className="fs-5 me-2" />
                           Add to wishlist
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <div className="d-flex flex-column  my-3 gap-10 ">

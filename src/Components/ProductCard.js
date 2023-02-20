@@ -11,15 +11,20 @@ import { MdFavorite } from "react-icons/md";
 import { formatPrice } from "./../Utilts.js/formatPrice";
 import Category from "./../Pages/Category";
 import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 import { addToCart } from "../RTK/Slices.js/CartSlice";
 import { addToFavorite } from "../RTK/Slices.js/favoriteSlice";
+import Aos from "aos";
+import "aos/dist/aos.css"
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
-
+useEffect(() => {
+Aos.init({duration:2500})
+},[])
   return (
     <>
-      <div className="col-xxl-2 col-xl-2 col-lg-3 col-md-5 col-sm-12 col-xs-12 mx-3 mb-5">
-        <div className="d-flex w-100 h-100 flex-column justify-content-between">
+      <div className="card-1 col-xxl-2 col-xl-2 col-lg-3 col-md-5 col-sm-12 col-xs-12 mx-3 mb-5">
+        <div data-aos="fade-up" className="d-flex w-100 h-100 flex-column justify-content-between">
           <Link
             to={`/product/${product?.id}`}
             key={product?.id}
@@ -49,6 +54,7 @@ const ProductCard = ({ product }) => {
             <div className="product-details">
               <h6 className="brand">{product?.brand}</h6>
               <h5 className="product-title">{product?.title}</h5>
+
               <ReactStars
                 count={5}
                 value={3}

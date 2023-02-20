@@ -43,16 +43,18 @@ const Cart = () => {
                 <span
                   onClick={() => dispatch(clearCart())}
                   style={{ width: "80px", cursor: "pointer" }}
-                  className=" bg-danger p-2 text-white"
+                  className=" bg-danger clear-cart p-2 text-white"
                 >
                   Clear All
                 </span>
-                <div className="cart-header py-3 d-flex justify-content-between align-items-center">
+                <div className=" cart-header py-3 d-flex justify-content-between align-items-center">
+                  
                   <h4 className="cart-col-1">Product</h4>
                   <h4 className="cart-col-2">Price</h4>
                   <h4 className="cart-col-3">Quantity</h4>
                   <h4 className="cart-col-4">Total</h4>
                 </div>
+                
               </>
             ) : (
               <>
@@ -89,18 +91,18 @@ const Cart = () => {
                   <div className="col-12">
                     <div className="cart-data mb-3 py-3 d-flex justify-content-between align-items-center">
                       <div className="cart-col-1 gap-15 d-flex align-items-center">
-                        <div className="w-25">
+                        <div className="w-50">
                           <img
                             className="img-fluid"
                             src={item.images[0]}
                             alt=""
                           />
                         </div>
-                        <div className="w-75">
+                        {/* <div className="w-50">
                           <p>item</p>
                           <p>Size: {item.size}</p>
                           <p>Color: non</p>
-                        </div>
+                        </div> */}
                       </div>
                       <div className="cart-col-2">
                         <h5 className="price"> {item.price}</h5>
@@ -122,7 +124,7 @@ const Cart = () => {
                         <div>
                           <AiFillDelete
                             onClick={() => dispatch(removeFromCart(item))}
-                            className="text-danger fs-5 "
+                            className="text-danger delete fs-5 "
                           />
                         </div>
                       </div>
@@ -138,19 +140,19 @@ const Cart = () => {
               );
             })}
             {cartItem.length > 0 ? (
-              <div className="col-12 py-2 mt-4">
-                <div className="d-flex justify-content-between align-items-end">
-                  <Link to="/" className="button">
+              <div className="row py-2 mt-4 d-flex button-shipping justify-content-between align-items-end">
+                <div className="col-xxl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                  <Link to="/" className="button button-shipping">
                     Continue to shopping
                   </Link>
-                  <div className="d-flex flex-column align-items-end">
+                </div>
+                  <div className="d-flex flex-column align-items-start mt-5 col-xxl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <h4>Subtotal: ${cart.totalPrice}</h4>
                     <p>Taxes and shipping calculated at checkout</p>
                     <Link to="/check-out" className="button">
                       Checkout
                     </Link>
                   </div>
-                </div>
               </div>
             ) : (
               ""
