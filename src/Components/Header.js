@@ -51,7 +51,7 @@ const handleShowNavbar = () => {
     <>
       <header className="header-top py-3">
         <div className="container-xxl">
-          <div className="row">
+          <div className="row d-flex align-items-center">
             <div className="col-xxl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12">
               <p className="text-white mb-0">
                 Free shopping over $100 | Free returns
@@ -80,18 +80,18 @@ const handleShowNavbar = () => {
       </header>
       <header className="header-mid">
         <div className="container-xxl">
-          <div className="row align-items-center">
-            <div className="header-mid-logo col-xxl-2 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div className="row d-flex align-items-center justify-content-between">
+            <div className="header-mid-logo col-xxl-2 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-none d-lg-flex">
               <h1>
-                <h1 data-aos="zoom-in" className="text-white">SHOPPING</h1>
+                <h1 data-aos="zoom-in" className="text-white ">SHOPPING</h1>
               </h1>
             </div>
-            <div className="header-mid-search col-xxl-5 col-lg-6 col-md-12 col-sm-12 col-xs-12">
-              <div className="input-group py-3">
+            <div className="header-mid-search col-xxl-5 col-lg-6 col-md-8 col-sm-8 col-xs-4">
+              <div className="input-group py-3 w-100">
                 <input
                   onChange={(e) => handleSearchTerm(e)}
                   type="text"
-                  className="form-control py-3"
+                  className="form-control py-3 w-100"
                   placeholder="search product here"
                   aria-label="search product here"
                   aria-describedby="basic-addon2"
@@ -106,7 +106,7 @@ const handleShowNavbar = () => {
             {/*  */}
            
              
-            <nav className="navbar col-6">
+            <div className="navbar col-xxl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
       <div className="container">
         
         <div className="menu-icon" onClick={handleShowNavbar}>
@@ -185,7 +185,7 @@ const handleShowNavbar = () => {
           </ul>
         </div>
       </div>
-            </nav>
+            </div>
             
            {/*  */}
             <div className="header-links align-items-center justify-content-center col-xxl-5 col-lg-6 col-md-12 col-sm-12 col-xs-12 ">
@@ -258,7 +258,7 @@ const handleShowNavbar = () => {
         <div className="container-xxl">
           <div className="row">
             <div className="menueShow col-xxl-5  d-flex align-items-center justify-content-center">
-              <div className="menu-category d-flex align-items-center gap-15 mx-5">
+              {/* <div className="menu-category d-flex align-items-center gap-15 mx-5">
                 <div className="dropdown">
                   <button
                     className="btn btn-secondary dropdown-toggle  bg-transparent border-0"
@@ -289,7 +289,7 @@ const handleShowNavbar = () => {
                     })}
                   </ul>
                 </div>
-              </div>
+              </div> */}
               
                 <div className="d-flex menueLinks align-items-center gap-15 justify-content-center">
                   <NavLink

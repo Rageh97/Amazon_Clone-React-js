@@ -75,7 +75,7 @@ const LogIn = () => {
                     <div className="mt-3 d-flex align-items-center justify-content-center gap-15">
                       <button
                         onClick={handleLogIn}
-                        type="submit"
+                        type="button"
                         className="button border-0"
                       >
                         Login
