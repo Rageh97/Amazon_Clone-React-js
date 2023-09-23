@@ -1,29 +1,4 @@
-<div align="center" id="top"> 
-  <img src=".\.github\app.gif" alt="My App" \>
-
-&#xa0;
-
-  <!-- <a href="https:\myapp.netlify.app">Demo<\a> -->
-
-<\div>
-
 <h1 align="center">E-commerce App (Amazon Clone)<\h1>
-
-<p align="center">
- 
-  <!-- <img alt="Github issues" src="https:\img.shields.io\github\issues\{{YOUR_GITHUB_USERNAME}}\my-app?color=56BEB8" \> -->
-
-  <!-- <img alt="Github forks" src="https:\img.shields.io\github\forks\{{YOUR_GITHUB_USERNAME}}\my-app?color=56BEB8" \> -->
-
-  <!-- <img alt="Github stars" src="https:\img.shields.io\github\stars\{{YOUR_GITHUB_USERNAME}}\my-app?color=56BEB8" \> -->
-
-<!-- Status -->
-
-<!-- <h4 align="center">
-	🚧  My App 🚀 Under construction...  🚧
-<\h4>
-
-<hr> -->
 
 <p align="center">
   <a href="#dart-about">About<\a> &#xa0; | &#xa0; 
