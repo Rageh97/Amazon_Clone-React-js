@@ -1,12 +1,12 @@
-<h1 align="center">E-commerce App (Amazon Clone)<\h1>
-
+<h1 align="center">E-commerce App (Amazon Clone)</h1>
 <p align="center">
-  <a href="#dart-about">About<\a> &#xa0; | &#xa0; 
-  <a href="#sparkles-features">Features<\a> &#xa0; | &#xa0;
-  <a href="#rocket-technologies">Technologies<\a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-starting">Starting<\a> &#xa0; | &#xa0;
-  <a href="https:\github.com\{{Rageh97}}" target="_blank">Author<\a>
-<\p>
+  <a href="#dart-about">About</a> &#xa0; | &#xa0; 
+  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
+  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
+  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
+  <a href="#memo-license">License</a> &#xa0; | &#xa0;
+  <a href="https://github.com/Rageh97" target="_blank">Author:Mohamed Rageh</a>
+</p>
 
 <br>
 
