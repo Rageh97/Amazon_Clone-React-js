@@ -9,13 +9,13 @@
 <h1 align="center">E-commerce App (Amazon Clone)</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/{{YOUR_GITHUB_USERNAME}}/my-app?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/{{Rageh97}}/my-app?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/{{YOUR_GITHUB_USERNAME}}/my-app?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/{{Rageh97}}/my-app?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{YOUR_GITHUB_USERNAME}}/my-app?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{Rageh97}}/my-app?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/{{YOUR_GITHUB_USERNAME}}/my-app?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/{{Rageh97}}/my-app?color=56BEB8">
 
   <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/{{YOUR_GITHUB_USERNAME}}/my-app?color=56BEB8" /> -->
 
@@ -36,17 +36,17 @@
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
   <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
   <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
+
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
   <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">Author</a>
+  <a href="https://github.com/{{Rageh97}}" target="_blank">Author</a>
 </p>
 
 <br>
 
 ## :dart: About
 
-Welcome to our E-commerce web application, an Amazon clone powered by React.js, Bootstrap, and Redux Toolkit. This project offers a comprehensive online shopping experience with a range of features spanning across 15 distinct pages.
+Welcome to my E-commerce web application, an Amazon clone powered by React.js, Bootstrap, and Redux Toolkit. This project offers a comprehensive online shopping experience with a range of features spanning across 15 distinct pages.
 
 ## :sparkles: Features
 
@@ -68,11 +68,14 @@ Welcome to our E-commerce web application, an Amazon clone powered by React.js, 
 
 The following tools were used in this project:
 
-- [React.js](https://expo.io/)
-- [Css](https://nodejs.org/en/)
-- [Bootstrap](https://pt-br.reactjs.org/)
-- [Redux-toolkit](https://reactnative.dev/)
-- [Api](https://www.typescriptlang.org/)
+- [React.js]
+- [Css]
+- [Bootstrap]
+- [Redux-toolkit]
+- [Api]
+- [helmet]
+- [breadcrum]
+- [Marquee]
 
 ## :white_check_mark: Requirements
 
@@ -84,7 +87,7 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 # Clone this project
 $ git clone https://github.com/Rageh97/Amazon_Clone-React-js.git
 # Access
-$ cd my-app
+$ cd Amazon_clone
 
 # Install dependencies
 $ npm install
