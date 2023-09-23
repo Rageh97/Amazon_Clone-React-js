@@ -4,25 +4,18 @@
 &#xa0;
 
   <!-- <a href="https:\myapp.netlify.app">Demo<\a> -->
+
 <\div>
 
 <h1 align="center">E-commerce App (Amazon Clone)<\h1>
 
 <p align="center">
-  <img alt="Github top language" src="https:\img.shields.io\github\languages\top\{{Rageh97}}\my-app?color=56BEB8">
-
-  <img alt="Github language count" src="https:\img.shields.io\github\languages\count\{{Rageh97}}\my-app?color=56BEB8">
-
-  <img alt="Repository size" src="https:\img.shields.io\github\repo-size\{{Rageh97}}\my-app?color=56BEB8">
-
-  <img alt="License" src="https:\img.shields.io\github\license\{{Rageh97}}\my-app?color=56BEB8">
-
+ 
   <!-- <img alt="Github issues" src="https:\img.shields.io\github\issues\{{YOUR_GITHUB_USERNAME}}\my-app?color=56BEB8" \> -->
 
   <!-- <img alt="Github forks" src="https:\img.shields.io\github\forks\{{YOUR_GITHUB_USERNAME}}\my-app?color=56BEB8" \> -->
 
   <!-- <img alt="Github stars" src="https:\img.shields.io\github\stars\{{YOUR_GITHUB_USERNAME}}\my-app?color=56BEB8" \> -->
-<\p>
 
 <!-- Status -->
 
@@ -36,9 +29,7 @@
   <a href="#dart-about">About<\a> &#xa0; | &#xa0; 
   <a href="#sparkles-features">Features<\a> &#xa0; | &#xa0;
   <a href="#rocket-technologies">Technologies<\a> &#xa0; | &#xa0;
-
   <a href="#checkered_flag-starting">Starting<\a> &#xa0; | &#xa0;
-  <a href="#memo-license">License<\a> &#xa0; | &#xa0;
   <a href="https:\github.com\{{Rageh97}}" target="_blank">Author<\a>
 <\p>
 
