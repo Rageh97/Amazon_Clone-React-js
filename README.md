@@ -12,7 +12,7 @@
 
 ## :live: Demo
 
-<a href="https://amazon-clone-react-4yhrhhyf9-rageh97.vercel.app/">Live Demo</a> &#xa0; | &#xa0;
+<a href="https://amazon-clone-react-aodj6jaab-rageh97.vercel.app/">Live Demo</a> &#xa0; | &#xa0;
 
 ## :dart: About
 
