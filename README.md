@@ -23,6 +23,7 @@ The Amazon Clone Project is a web application designed to replicate the core fun
 The following tools were used in this project:
 
 - [React.js]
+- [React-router-dom]
 - [Css]
 - [Bootstrap]
 - [Redux-toolkit]
