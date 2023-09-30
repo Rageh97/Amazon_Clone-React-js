@@ -1,7 +1,7 @@
 <h1 align="center">E-commerce App (Amazon Clone)</h1>
 <p align="center">
   <a href="#dart-about">About the Project</a> &#xa0; | &#xa0; 
-  <a href="#live-Demo">About the Project</a> &#xa0; | &#xa0; 
+  <a href="#live-Demo">Live Demo</a> &#xa0; | &#xa0; 
   <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
   <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
