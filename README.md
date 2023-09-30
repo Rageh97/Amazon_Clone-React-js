@@ -1,10 +1,9 @@
 <h1 align="center">E-commerce App (Amazon Clone)</h1>
 <p align="center">
-  <a href="#dart-about">About</a> &#xa0; | &#xa0; 
+  <a href="#dart-about">About the Project</a> &#xa0; | &#xa0; 
   <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
   <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
-  <a href="#memo-license">License</a> &#xa0; | &#xa0;
   <a href="https://github.com/Rageh97" target="_blank">Author:Mohamed Rageh</a>
 </p>
 
@@ -12,7 +11,20 @@
 
 ## :dart: About
 
-Welcome to my E-commerce web application, an Amazon clone powered by React.js, Bootstrap, and Redux Toolkit. This project offers a comprehensive online shopping experience with a range of features spanning across 15 distinct pages.
+The Amazon Clone Project is a web application designed to replicate the core functionality of the popular e-commerce platform, Amazon. It serves as a learning exercise and a demonstration of web development skills, showcasing the ability to create a fully functional e-commerce platform from scratch.
+
+## :rocket: Technologies
+
+The following tools were used in this project:
+
+- [React.js]
+- [Css]
+- [Bootstrap]
+- [Redux-toolkit]
+- [Api]
+- [helmet]
+- [breadcrum]
+- [Marquee]
 
 ## :sparkles: Features
 
@@ -28,20 +40,12 @@ Welcome to my E-commerce web application, an Amazon clone powered by React.js, B
 :Contacts: Reach out to us easily for assistance.;\
 :Favorites Wishlist: Save your favorite products for future reference.;\
 :Compare Products: Make informed decisions with product comparisons.;\
-:Forgot Password: Easily reset your password if needed.
+:Forgot Password: Easily reset your password if needed.\
+:Users can leave reviews and ratings for products.\
+:Read reviews and see average ratings for products.
+:The application is optimized for various screen sizes and devices.\
+:Ensures a seamless shopping experience on desktop and mobile.
 
-## :rocket: Technologies
-
-The following tools were used in this project:
-
-- [React.js]
-- [Css]
-- [Bootstrap]
-- [Redux-toolkit]
-- [Api]
-- [helmet]
-- [breadcrum]
-- [Marquee]
 
 ## :white_check_mark: Requirements
 
@@ -63,13 +67,5 @@ $ npm start
 
 # The server will initialize in the <http:\localhost:3000>
 ```
-
-## :memo: License
-
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
-
-Made with :heart: by <a href="https:\github.com\Rageh97" target="_blank">{{YOUR_NAME}}<\a>
-
-&#xa0;
 
 <a href="#top">Back to top<\a>
