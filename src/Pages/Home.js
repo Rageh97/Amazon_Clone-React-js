@@ -1,6 +1,4 @@
 import React from "react";
-import ProductCard from "../Components/ProductCard";
-import BlogCard from "../Components/BlogCard";
 import Marquee from "react-fast-marquee";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategory } from "../RTK/Slices.js/categorySlice";
@@ -23,7 +21,7 @@ const Home = () => {
   const productsStatus = useSelector(getAllProductsStatus);
   const categories = useSelector(getAllCategory);
   useEffect(() => {
-    dispatch(fetchProducts(50));
+    dispatch(fetchProducts(20));
   }, []);
   const tempProducts = [];
   if (products.length > 0) {
