@@ -332,7 +332,7 @@ const Header = () => {
                           }
                           to={`/category/${category.slug}`}
                         >
-                          {category?.slug.replace("-", "")}
+                         {category?.name}
                         </NavLink>
                       </li>
                     </>
