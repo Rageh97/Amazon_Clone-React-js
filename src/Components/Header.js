@@ -13,7 +13,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import {AiOutlineMenuFold} from "react-icons/ai"
+import { AiOutlineMenuFold } from "react-icons/ai";
 const Header = () => {
   const dispatch = useDispatch();
   const activeLink = "text-warning";
@@ -21,6 +21,8 @@ const Header = () => {
   const navigate = useNavigate();
 
   const categories = useSelector(getAllCategory);
+  console.log(categories);
+  
   const cart = useSelector((state) => state.cart);
   const userName = JSON.parse(localStorage.getItem("user"));
   const isLOggedIn = localStorage.getItem("isloggedin");
@@ -40,13 +42,13 @@ const Header = () => {
   useEffect(() => {
     dispatch(fetchCategories());
   }, [dispatch]);
-// .......................................
-const [showNavbar, setShowNavbar] = useState(false)
+  // .......................................
+  const [showNavbar, setShowNavbar] = useState(false);
 
-const handleShowNavbar = () => {
-  setShowNavbar(!showNavbar)
-}
-// ........................................
+  const handleShowNavbar = () => {
+    setShowNavbar(!showNavbar);
+  };
+  // ........................................
   return (
     <>
       <header className="header-top py-3">
@@ -71,7 +73,7 @@ const handleShowNavbar = () => {
                 {" "}
                 Hotline :{" "}
                 <a className="text-white" href="tel 001637393737">
-                  01065330985
+                 01030771963?
                 </a>
               </p>
             </div>
@@ -83,7 +85,9 @@ const handleShowNavbar = () => {
           <div className="row d-flex align-items-center justify-content-between">
             <div className="header-mid-logo col-xxl-2 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-none d-lg-flex">
               <h1>
-                <h1 data-aos="zoom-in" className="text-white ">SHOPPING</h1>
+                <h1 data-aos="zoom-in" className="text-white ">
+                  SHOPPING
+                </h1>
               </h1>
             </div>
             <div className="header-mid-search col-xxl-5 col-lg-6 col-md-8 col-sm-8 col-xs-4">
@@ -104,90 +108,87 @@ const handleShowNavbar = () => {
               </div>
             </div>
             {/*  */}
-           
-             
+
             <div className="navbar col-xxl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
-      <div className="container">
-        
-        <div className="menu-icon" onClick={handleShowNavbar}>
-          <AiOutlineMenuFold className="text-white fs-5"/>
-        </div>
-        <div className={`nav-elements  ${showNavbar && 'active'}`}>
-          <ul>
-            <li>
-            <div className="comapre-product">
-                  <Link
-                    to="/compare-product"
-                    className="d-flex align-items-center gap-10 text-white"
-                  >
-                    <img data-aos="zoom-in" src="images/compare.svg" />
-                    <p className="mb-0">
-                      Compare <br /> products
-                    </p>
-                  </Link>
+              <div className="container">
+                <div className="menu-icon" onClick={handleShowNavbar}>
+                  <AiOutlineMenuFold className="text-white fs-5" />
                 </div>
-            </li>
-            <li>
-            <div className="favorite-wishlist">
-                  <Link
-                    to="/favorite-wishlist"
-                    className="d-flex align-items-center gap-10 text-white"
-                  >
-                    <img data-aos="zoom-in" src="images/wishlist.svg" />
-                    <p className="mb-0">
-                      Favorit
-                      <br /> wishlist
-                    </p>
-                  </Link>
-                </div>
-            </li>
-            <li>
-            {isLOggedIn ? (
-                  <>
-                    <Link to="/log-in" onClick={handleLogOut}>
-                      <div className="d-flex align-items-center justify-content-center gap-10">
-                        <BiLogOutCircle className="text-white fs-5" />
-                        <h6 className="text-white">logout</h6>
+                <div className={`nav-elements  ${showNavbar && "active"}`}>
+                  <ul>
+                    <li>
+                      <div className="comapre-product">
+                        <Link
+                          to="/compare-product"
+                          className="d-flex align-items-center gap-10 text-white"
+                        >
+                          <img data-aos="zoom-in" src="images/compare.svg" alt=""/>
+                          <p className="mb-0">
+                            Compare <br /> products
+                          </p>
+                        </Link>
                       </div>
-                    </Link>
-                  </>
-                ) : (
-                  <div className="log-in-content">
-                    <Link
-                      to="/log-in"
-                      className="d-flex align-items-center gap-10 text-white"
-                    >
-                      <img data-aos="zoom-in" src="images/user.svg" />
-                      <p className="mb-0">
-                        Log in <br /> My account
-                      </p>
-                    </Link>
-                  </div>
-                )}
-            </li>
-            <li>
-            <div className="cart-content">
-                  <Link
-                    to="/cart"
-                    className="d-flex align-items-center gap-10 text-white"
-                  >
-                    <img src="images/cart.svg" />
-                    <div className="d-flex flex-column">
-                      <span className="badge bg-white text-dark">
-                        {cart.quantity}
-                      </span>
-                      <p className="mb-0">${cart.totalPrice}</p>
-                    </div>
-                  </Link>
+                    </li>
+                    <li>
+                      <div className="favorite-wishlist">
+                        <Link
+                          to="/favorite-wishlist"
+                          className="d-flex align-items-center gap-10 text-white"
+                        >
+                          <img data-aos="zoom-in" src="images/wishlist.svg" alt=""/>
+                          <p className="mb-0">
+                            Favorit
+                            <br /> wishlist
+                          </p>
+                        </Link>
+                      </div>
+                    </li>
+                    <li>
+                      {isLOggedIn ? (
+                        <>
+                          <Link to="/log-in" onClick={handleLogOut}>
+                            <div className="d-flex align-items-center justify-content-center gap-10">
+                              <BiLogOutCircle className="text-white fs-5" />
+                              <h6 className="text-white">logout</h6>
+                            </div>
+                          </Link>
+                        </>
+                      ) : (
+                        <div className="log-in-content">
+                          <Link
+                            to="/log-in"
+                            className="d-flex align-items-center gap-10 text-white"
+                          >
+                            <img data-aos="zoom-in" src="images/user.svg" alt=""/>
+                            <p className="mb-0">
+                              Log in <br /> My account
+                            </p>
+                          </Link>
+                        </div>
+                      )}
+                    </li>
+                    <li>
+                      <div className="cart-content">
+                        <Link
+                          to="/cart"
+                          className="d-flex align-items-center gap-10 text-white"
+                        >
+                          <img src="images/cart.svg" alt=""/>
+                          <div className="d-flex flex-column">
+                            <span className="badge bg-white text-dark">
+                              {cart.quantity}
+                            </span>
+                            <p className="mb-0">${cart.totalPrice}</p>
+                          </div>
+                        </Link>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
-            </li>
-            
-          </ul>
-        </div>
-      </div>
+              </div>
             </div>
-            
-           {/*  */}
+
+            {/*  */}
             <div className="header-links align-items-center justify-content-center col-xxl-5 col-lg-6 col-md-12 col-sm-12 col-xs-12 ">
               <div className="gap-30 d-flex align-items-center justify-content-between">
                 <div className="comapre-product">
@@ -195,7 +196,7 @@ const handleShowNavbar = () => {
                     to="/compare-product"
                     className="d-flex align-items-center gap-10 text-white"
                   >
-                    <img data-aos="zoom-in" src="images/compare.svg" />
+                    <img data-aos="zoom-in" src="images/compare.svg" alt=""/>
                     <p className="mb-0">
                       Compare <br /> products
                     </p>
@@ -206,7 +207,7 @@ const handleShowNavbar = () => {
                     to="/favorite-wishlist"
                     className="d-flex align-items-center gap-10 text-white"
                   >
-                    <img data-aos="zoom-in" src="images/wishlist.svg" />
+                    <img data-aos="zoom-in" src="images/wishlist.svg" alt=""/>
                     <p className="mb-0">
                       Favorit
                       <br /> wishlist
@@ -228,7 +229,7 @@ const handleShowNavbar = () => {
                       to="/log-in"
                       className="d-flex align-items-center gap-10 text-white"
                     >
-                      <img data-aos="zoom-in" src="images/user.svg" />
+                      <img data-aos="zoom-in" src="images/user.svg" alt=""/>
                       <p className="mb-0">
                         Log in <br /> My account
                       </p>
@@ -240,7 +241,7 @@ const handleShowNavbar = () => {
                     to="/cart"
                     className="d-flex align-items-center gap-10 text-white"
                   >
-                    <img src="images/cart.svg" />
+                    <img src="images/cart.svg" alt=""/>
                     <div className="d-flex flex-column">
                       <span className="badge bg-white text-dark">
                         {cart.quantity}
@@ -290,39 +291,38 @@ const handleShowNavbar = () => {
                   </ul>
                 </div>
               </div> */}
-              
-                <div className="d-flex menueLinks align-items-center gap-15 justify-content-center">
-                  <NavLink
-                    to="/"
-                    className={({ isActive }) =>
-                      isActive ? activeLink : unActiveLink
-                    }
-                  >
-                    Home
-                  </NavLink>
 
-                  <NavLink
-                    to="/blogs"
-                    className={({ isActive }) =>
-                      isActive ? activeLink : unActiveLink
-                    }
-                  >
-                    Blogs
-                  </NavLink>
-                  <NavLink
-                    to="/contact"
-                    className={({ isActive }) =>
-                      isActive ? activeLink : unActiveLink
-                    }
-                  >
-                    Contact
-                  </NavLink>
-                </div>
-              
+              <div className="d-flex menueLinks align-items-center gap-15 justify-content-center">
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive ? activeLink : unActiveLink
+                  }
+                >
+                  Home
+                </NavLink>
+
+                <NavLink
+                  to="/blogs"
+                  className={({ isActive }) =>
+                    isActive ? activeLink : unActiveLink
+                  }
+                >
+                  Blogs
+                </NavLink>
+                <NavLink
+                  to="/contact"
+                  className={({ isActive }) =>
+                    isActive ? activeLink : unActiveLink
+                  }
+                >
+                  Contact
+                </NavLink>
+              </div>
             </div>
             <div className="categoryShow  col-xxl-7 align-items-center justify-content-center">
               <ul className="gap-15 d-flex align-items-center mb-0">
-                {categories.slice(0, 6).map((category, idx) => {
+                {categories?.slice(0, 5).map((category, idx) => {
                   return (
                     <>
                       <li key={idx}>
@@ -330,9 +330,9 @@ const handleShowNavbar = () => {
                           className={({ isActive }) =>
                             isActive ? activeLink : unActiveLink
                           }
-                          to={`/category/${category}`}
+                          to={`/category/${category.slug}`}
                         >
-                          {category.replace("-", "")}
+                          {category?.name.replace("-", "")}
                         </NavLink>
                       </li>
                     </>

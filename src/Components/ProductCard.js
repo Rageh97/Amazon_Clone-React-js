@@ -15,16 +15,19 @@ import { useEffect } from "react";
 import { addToCart } from "../RTK/Slices.js/CartSlice";
 import { addToFavorite } from "../RTK/Slices.js/favoriteSlice";
 import Aos from "aos";
-import "aos/dist/aos.css"
+import "aos/dist/aos.css";
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
-useEffect(() => {
-Aos.init({duration:2500})
-},[])
+  useEffect(() => {
+    Aos.init({ duration: 2500 });
+  }, []);
   return (
     <>
       <div className="card-1 col-xxl-2 col-xl-2 col-lg-3 col-md-5 col-sm-12 col-xs-12 mx-3 mb-5">
-        <div data-aos="fade-up" className="d-flex w-100 h-100 flex-column justify-content-between">
+        <div
+          data-aos="fade-up"
+          className="d-flex w-100 h-100 flex-column justify-content-between"
+        >
           <Link
             to={`/product/${product?.id}`}
             key={product?.id}

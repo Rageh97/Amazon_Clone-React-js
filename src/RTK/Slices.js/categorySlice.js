@@ -10,7 +10,9 @@ const initialState = {
 export const fetchCategories = createAsyncThunk("category/fetch", async () => {
   const res = await fetch("https://dummyjson.com/products/categories");
   const data = await res.json();
+  
   return data;
+  
 });
 // Fetch Category Products............
 export const fetchProductsOfCategory = createAsyncThunk(

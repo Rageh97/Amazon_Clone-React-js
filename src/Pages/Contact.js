@@ -17,6 +17,7 @@ const Contact = () => {
           <div className="row">
             <div className="col-12">
               <iframe
+              title="google map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13683.76047585647!2d30.962285171691796!3d30.972153204867386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f7b3b31ed01575%3A0x2ae50b1962e6af90!2z2YLYt9mI2LHYjCDZhdiv2YrZhtipINmC2LfZiNix2Iwg2YXYsdmD2LIg2YLYt9mI2LHYjCDYp9mE2LrYsdio2YrYqQ!5e0!3m2!1sar!2seg!4v1675170625543!5m2!1sar!2seg"
                 width="600"
                 height="450"

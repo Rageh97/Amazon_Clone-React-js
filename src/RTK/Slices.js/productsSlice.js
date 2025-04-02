@@ -11,6 +11,8 @@ const initialState = {
 export const fetchProducts = createAsyncThunk("products/fetch", async (limit) => {
   const res = await fetch(`https://dummyjson.com/products?limit=${limit}`);
   const data = await res.json();
+  
+  
   return data.products;
 });
 // Fetch single Product............

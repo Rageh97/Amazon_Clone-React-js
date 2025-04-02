@@ -6,12 +6,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { fetchProducts } from "../RTK/Slices.js/categorySlice";
-const SpecialProduct = () => {
+const SpecialProduct = ({ products }) => {
   const dispatch = useDispatch();
   return (
     <>
       <ToastContainer />
-      {products.slice(0, 3).map((product) => {
+      {products?.slice(0, 3).map((product) => {
         return (
           <>
             <div className="col-4">

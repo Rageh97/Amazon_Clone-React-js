@@ -14,15 +14,18 @@ import {
 import ProductList from "../Components/ProductList";
 import ScrollToTop from "../Components/Scroll";
 
-
 const Home = () => {
   const dispatch = useDispatch();
   const products = useSelector(getAllProducts);
   const productsStatus = useSelector(getAllProductsStatus);
   const categories = useSelector(getAllCategory);
+  
+
+  
+  
   useEffect(() => {
     dispatch(fetchProducts(20));
-  }, []);
+  }, [dispatch]);
   const tempProducts = [];
   if (products.length > 0) {
     for (let i in products) {
@@ -36,24 +39,25 @@ const Home = () => {
   }
 
   let catProductsOne = products.filter(
-    (product) => product.category === categories[0]
+    (product) => product.category === categories[0]?.slug
+    
+    
   );
   let catProductsTwo = products.filter(
-    (product) => product.category === categories[1]
+    (product) => product.category === categories[1]?.slug
   );
   let catProductsThree = products.filter(
-    (product) => product.category === categories[2]
+    (product) => product.category === categories[2]?.slug
   );
   let catProductsFour = products.filter(
-    (product) => product.category === categories[3]
+    (product) => product.category === categories[3]?.slug
   );
 
   return (
     <>
-   
       <ScrollToTop />
       <ToastContainer />
-      
+
       <section className="home-2">
         <div className="py-5">
           <div className="container-fluid">
@@ -73,7 +77,7 @@ const Home = () => {
                     }}
                     className="text-dark mb-3 mx-3 w-25 text-center p-3"
                   >
-                    {categories[0]}
+                    {categories[0]?.slug}
                   </h3>
                 </div>
                 {productsStatus === STATUS.LOADING ? (
@@ -92,7 +96,7 @@ const Home = () => {
                     }}
                     className="text-dark mb-3 mx-3 w-25 text-center p-3"
                   >
-                    {categories[1]}
+                    {categories[1]?.slug}
                   </h3>
                 </div>
                 {productsStatus === STATUS.LOADING ? (
@@ -111,7 +115,7 @@ const Home = () => {
                     }}
                     className="text-dark mb-3 mx-3 w-25 text-center p-3"
                   >
-                    {categories[2]}
+                    {categories[2]?.slug}
                   </h3>
                 </div>
                 {productsStatus === STATUS.LOADING ? (
@@ -130,7 +134,7 @@ const Home = () => {
                     }}
                     className="text-dark mb-3 mx-3 w-25 text-center p-3"
                   >
-                    {categories[3]}
+                    {categories[3]?.slug}
                   </h3>
                 </div>
                 {productsStatus === STATUS.LOADING ? (
@@ -179,9 +183,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-    
-
-      
     </>
   );
 };

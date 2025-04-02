@@ -19,7 +19,7 @@ const Search = () => {
   useEffect(() => {
     dispatch(clearSearch());
     dispatch(fetchSearchItem(searchTerm));
-  }, [searchTerm]);
+  }, [searchTerm, dispatch]);
   if (searchProducts.length === 0) {
     return (<>
     
